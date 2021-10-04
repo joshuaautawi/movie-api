@@ -1,0 +1,1339 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MovieReviewApp_API_Production",
+    "description": "## Introduction\n\nBackend API for the Glints Academy x Binar Academy mini project batch 14 - D team. Movies review application to manage movies, reviews, users and authentications. Let's do this!",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://miniproject-moviereviewapp.herokuapp.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/movies/overview/6154228bf4dad17b194b7b8d": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/overview/{ _id }",
+        "description": "## Movie Overview by ID\nuser can get movie overview by id.",
+        "operationId": "/movies/overview/{_id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/character/615422fcf4dad17b194b7b90": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movie/character/{ _id} }",
+        "description": "## Movie Character by ID\nuser can get data movie character by ID.",
+        "operationId": "/movie/character/{_id}}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/find/genre": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/find/genre",
+        "description": "## Movie Find Genre\nuser can get movie data using searching by Genre.",
+        "operationId": "/movies/find/genre",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/show/genre": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/show/genre",
+        "operationId": "/movies/show/genre",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 4
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          },
+          {
+            "name": "genre",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "drama"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/",
+        "description": "## Movies\nget all movie data from database.",
+        "operationId": "/movies/",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/",
+        "description": "## Create Movies\nOnly admin can create movie data to database.",
+        "operationId": "Post/movies/",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/moviesrequest"
+              },
+              "example": {
+                "title": "CRAZY RICH OCEANS",
+                "trailer": "https://youtu.be/ZQ-YX-5bAs0",
+                "poster": "https://upload.wikimedia.org/wikipedia/en/b/ba/Crazy_Rich_Asians_poster.png",
+                "sypnopsis": "Rachel Chu is happy to accompany her longtime boyfriend, Nick, to his best friend's wedding in Singapore. She's also surprised to learn that Nick's family is extremely wealthy and he's considered one of the country's most eligible bachelors. Thrust into the spotlight, Rachel must now contend with jealous socialites, quirky relatives and something far, far worse -- Nick's disapproving mother.",
+                "movie_info": {
+                  "Rating": "PG-13 (Some Suggestive Content|Language",
+                  "Genre": [
+                    "Romance"
+                  ],
+                  "Original Language": "English",
+                  "Director": "Jon M. Chu",
+                  "Producer": "Nina Jacobson, Brad Simpson, John Penotti",
+                  "Writer": " Peter Chiarelli, Adele Lim",
+                  "Release Date (Theaters)": "Aug 15, 2018  Wide",
+                  "Release Date (Streaming)": "Nov 20, 2018",
+                  "Box Office (Gross USA)": "$174.5M",
+                  "Distributor": "Warner Bros. Pictures",
+                  "Production Co": "Color Force, Ivanhoe Pictures",
+                  "Sound Mix": "Dolby Digital, DTS, SDDS"
+                },
+                "character": [
+                  {
+                    "name": "Constance Wu",
+                    "picture": "https://resizing.flixster.com/1yh69fe-7HJ634B9QXl5yXYsSKY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/496539/496539_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Henry Golding",
+                    "picture": "https://resizing.flixster.com/3M3ZcZsON-g_KYoBA5ERussCv5U=/100x120/v2/https://flxt.tmsimg.com/assets/1043999_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Michelle Yeoh",
+                    "picture": "https://resizing.flixster.com/mrcdzQeX8JRMDoSrOsCg-n7OIRg=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/73516/73516_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Gemma Chan",
+                    "picture": "https://resizing.flixster.com/Se03K0UfR_BMmcObj8rludVyjGo=/100x120/v2/https://flxt.tmsimg.com/assets/565153_v9_bc.jpg"
+                  },
+                  {
+                    "name": "Lisa Lu",
+                    "picture": "https://resizing.flixster.com/504HU0cMFap0dt_fmCl-bJe8SVQ=/100x120/v2/https://flxt.tmsimg.com/assets/77293_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Awkwafina",
+                    "picture": "https://resizing.flixster.com/t4KIv5rWkD2p7DpeQ77mfhKjEwY=/100x120/v2/https://flxt.tmsimg.com/assets/900111_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Harry Shum Jr.",
+                    "picture": "https://resizing.flixster.com/wBtnQ5CQj94u_yxze-SLToMb5YI=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/590768/590768_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Ken Jeong",
+                    "picture": "https://resizing.flixster.com/i7Qjlc0c3_9g8YpMcux5c_Y5HbY=/100x120/v2/https://flxt.tmsimg.com/assets/313030_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Sonoya Mizuno",
+                    "picture": "https://resizing.flixster.com/8XA1VRm5keP_Yj4RyYEeegCNdjY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/804769/804769_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Chris Pang",
+                    "picture": "https://resizing.flixster.com/3JO0yN5R8B5TVf_OQc2mXMbsmLY=/100x120/v2/https://flxt.tmsimg.com/assets/761309_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Jimmy O. Yang",
+                    "picture": "https://resizing.flixster.com/n17F7yoMetxIFYMh16WDM0gc1h8=/100x120/v2/https://flxt.tmsimg.com/assets/649195_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Ronny Chieng",
+                    "picture": "https://resizing.flixster.com/18T63G0m-FbtOXVd6JA1s_oKvtQ=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/901343/901343_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Remy Hii",
+                    "picture": "https://resizing.flixster.com/0iULPxp9GRPiS2V3G6bvIScpJ8w=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/806474/806474_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Nico Santos",
+                    "picture": "https://resizing.flixster.com/P8NyY9c80_4OS2ZNLzDdMXJk9TI=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/834814/834814_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Jing Lusi",
+                    "picture": "https://resizing.flixster.com/VO-AQ0AWQRx2aSfV3c-EmII8gX0=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/664370/664370_v9_ba.jpg"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/6154228bf4dad17b194b7b8d": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/find/{ _id }",
+        "description": "## Movie find by ID\nuser able to search movie by movie ID.",
+        "operationId": "/movies/find/{_id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/title/avengers": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/title/{title}",
+        "description": "## Movies title\nable to get movie title from database.",
+        "operationId": "/movies/title/{title}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/6153e6bd1e2c5a37238af0bf": {
+      "patch": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/{ _id }",
+        "description": "## Update Movie\nOnly Admin can update movie data.",
+        "operationId": "/movies/{_id}",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/movies_idrequest"
+              },
+              "example": {
+                "title": "PANTERSSS",
+                "poster": "https://static.metacritic.com/images/products/movies/2/9c73236df99b1fafbe8f86bdeba3c678-250h.jpg",
+                "sypnopsis": "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies and release the full power of Black Panther to defeat his foes and secure the safety of his people.",
+                "movie_info": {
+                  "Rating": "PG-13 (Sequences of Action Violence|A Brief Rude Gesture)",
+                  "Genre": [
+                    "Fantasy",
+                    "Action",
+                    "Adventure"
+                  ],
+                  "Original Language": "English",
+                  "Director": "Ryan Coogler",
+                  "Producer": "Kevin Feige",
+                  "Writer": "Ryan Coogler, Joe Robert Cole",
+                  "Release Date (Theaters)": "Feb 16, 2018  Wide",
+                  "Release Date (Streaming)": "May 2, 2018",
+                  "Box Office (Gross USA)": "$700.2M",
+                  "Distributor": "Walt Disney",
+                  "Production Co": "Walt Disney Pictures",
+                  "Sound Mix": "DTS, Dolby Atmos"
+                },
+                "character": [
+                  {
+                    "name": " Boseman",
+                    "picture": "https://resizing.flixster.com/_WeTvmtiyLMO-gmSJzfRzIcohvY=/100x120/v2/https://flxt.tmsimg.com/assets/492157_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Michael B. Jordan",
+                    "picture": "https://resizing.flixster.com/0wrW94popqYjBdgxzJMIKpABIoE=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/382200/382200_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Lupita Nyong'o",
+                    "picture": "https://resizing.flixster.com/BjffG4V8xwsscJQIJZm9pMVYH3Y=/100x120/v2/https://flxt.tmsimg.com/assets/724494_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Danai Gurira",
+                    "picture": "https://resizing.flixster.com/R_bem74LX117ZZeuN9yjkWwCF60=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/511454/511454_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Danai Gurira",
+                    "picture": "https://resizing.flixster.com/R_bem74LX117ZZeuN9yjkWwCF60=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/511454/511454_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Martin Freeman",
+                    "picture": "https://resizing.flixster.com/yTy0s3_ZfUWIuquqRGLXkbY1hnI=/100x120/v2/https://flxt.tmsimg.com/assets/279370_v9_bc.jpg"
+                  },
+                  {
+                    "name": "Daniel Kaluuya",
+                    "picture": "https://resizing.flixster.com/I7StAx-1QeI73qQxZLX68tSiJok=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/580280/580280_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Letitia Wright",
+                    "picture": "https://resizing.flixster.com/FaSh6PX6KwqTNLVxZx82kDoESns=/100x120/v2/https://flxt.tmsimg.com/assets/643922_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Winston Duke",
+                    "picture": "https://resizing.flixster.com/E04Y6z6vJMey-Xpt6MI2u0KTAg0=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/764498/764498_v9_ba.jpg"
+                  },
+                  {
+                    "name": "Angela Bassett",
+                    "picture": "https://resizing.flixster.com/3FPtapNZWK9tA1tlbImXwmU30T0=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/4871/4871_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Forest Whitaker",
+                    "picture": "https://resizing.flixster.com/BSHW_U6POs9yLhvZXrrcJLMgMeE=/100x120/v2/https://flxt.tmsimg.com/assets/1917_v9_bc.jpg"
+                  },
+                  {
+                    "name": "Andy Serkis",
+                    "picture": "https://resizing.flixster.com/xqu5edvpUHDoR8m2mA1NPCYeg1s=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/85991/85991_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Florence Kasumba",
+                    "picture": "https://resizing.flixster.com/d1wfStHuR1HFBktcPh2bpJd9ioY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/732198/732198_v9_bb.jpg"
+                  },
+                  {
+                    "name": "Sterling K. Brown",
+                    "picture": "https://resizing.flixster.com/Tku5RvgkPJurjKGxXc3NbXzdyQ4=/100x120/v2/https://flxt.tmsimg.com/assets/293463_v9_bd.jpg"
+                  },
+                  {
+                    "name": "John Kani",
+                    "picture": "https://resizing.flixster.com/mnZ-9h9QOwzrjmc45_bb2N0_IwU=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/33039/33039_v9_ba.jpg"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "/movies/{ _id }",
+        "description": "## Delete Movie\nOnly Admin can delete movie data from database.",
+        "operationId": "Delete/movies/{_id}",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "/register/",
+        "description": "## Register User\r\n\r\nAdd user to database with encryped password",
+        "operationId": "/register/",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/registerrequest"
+              },
+              "example": {
+                "name": "adjie",
+                "email": "adjie@gmail.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "/login/",
+        "description": "## Login User\n\nLogin user able to be create review movies, comment, add rating, etc.",
+        "operationId": "/login/",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/loginrequest"
+              },
+              "example": {
+                "email": "udins@gmail.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/me": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "/me/",
+        "description": "## GET login user by token\n\nable to get login user data ftrom database without password via token.",
+        "operationId": "/me/",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "json type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/updatedetails": {
+      "put": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "/updatedetails/",
+        "description": "Update logged in user name and email (able to Update user basic info)",
+        "operationId": "/updatedetails/",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updatedetailsrequest"
+              },
+              "example": {
+                "email": "joshua@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin": {
+      "get": {
+        "tags": [
+          "Users (admin only)"
+        ],
+        "summary": "Get All Users",
+        "description": "## Get All Users\nOnly Admin can get all users data from database.",
+        "operationId": "GetAllUsers",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 4
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Users (admin only)"
+        ],
+        "summary": "Create User",
+        "description": "## Create user by admin\nAdmin create an user account to database",
+        "operationId": "CreateUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              },
+              "example": {
+                "name": "Udin",
+                "email": "udin@gmail.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/6153c23cb8671f3013980827": {
+      "get": {
+        "tags": [
+          "Users (admin only)"
+        ],
+        "summary": "Get Single User",
+        "description": "## Get SIngle User\r\nOnly Admin can get single user data from database",
+        "operationId": "GetSingleUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/61553b8b5c89edea59d05ca2": {
+      "put": {
+        "tags": [
+          "Users (admin only)"
+        ],
+        "summary": "Update User",
+        "description": "## Edit user by admin\nOnly admin can update user account data from database",
+        "operationId": "UpdateUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              },
+              "example": {
+                "name": "Saprol"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Users (admin only)"
+        ],
+        "summary": "Delete User",
+        "description": "## Delete user by admin\nOnly admin can delete user account data from database",
+        "operationId": "DeleteUser",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/review/6157291ecf087f5024dc2c92": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Create Movie Review",
+        "operationId": "CreateMovieReview",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMovieReviewRequest"
+              },
+              "example": {
+                "userRating": 5,
+                "userReview": "Ini review movie paling terupdate",
+                "userProfile": "photo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get All Review",
+        "operationId": "GetAllReview",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "/review/{_id}",
+        "description": "## Review Update\nOnly user login can update their own review",
+        "operationId": "/review/{_id}",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/review_id_request"
+              },
+              "example": {
+                "userRating": 2,
+                "userReview": "Bad movies ever"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "/review/{_id}",
+        "description": "## Delete Movie\nUser can delete their own review.",
+        "operationId": "Delete/review/{_id}",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "moviesrequest": {
+        "title": "moviesrequest",
+        "required": [
+          "title",
+          "trailer",
+          "poster",
+          "sypnopsis",
+          "movie_info",
+          "character"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "trailer": {
+            "type": "string"
+          },
+          "poster": {
+            "type": "string"
+          },
+          "sypnopsis": {
+            "type": "string"
+          },
+          "movie_info": {
+            "$ref": "#/components/schemas/MovieInfo"
+          },
+          "character": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Character"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "title": "CRAZY RICH OCEANS",
+          "trailer": "https://youtu.be/ZQ-YX-5bAs0",
+          "poster": "https://upload.wikimedia.org/wikipedia/en/b/ba/Crazy_Rich_Asians_poster.png",
+          "sypnopsis": "Rachel Chu is happy to accompany her longtime boyfriend, Nick, to his best friend's wedding in Singapore. She's also surprised to learn that Nick's family is extremely wealthy and he's considered one of the country's most eligible bachelors. Thrust into the spotlight, Rachel must now contend with jealous socialites, quirky relatives and something far, far worse -- Nick's disapproving mother.",
+          "movie_info": {
+            "Rating": "PG-13 (Some Suggestive Content|Language",
+            "Genre": [
+              "Romance"
+            ],
+            "Original Language": "English",
+            "Director": "Jon M. Chu",
+            "Producer": "Nina Jacobson, Brad Simpson, John Penotti",
+            "Writer": " Peter Chiarelli, Adele Lim",
+            "Release Date (Theaters)": "Aug 15, 2018  Wide",
+            "Release Date (Streaming)": "Nov 20, 2018",
+            "Box Office (Gross USA)": "$174.5M",
+            "Distributor": "Warner Bros. Pictures",
+            "Production Co": "Color Force, Ivanhoe Pictures",
+            "Sound Mix": "Dolby Digital, DTS, SDDS"
+          },
+          "character": [
+            {
+              "name": "Constance Wu",
+              "picture": "https://resizing.flixster.com/1yh69fe-7HJ634B9QXl5yXYsSKY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/496539/496539_v9_bb.jpg"
+            },
+            {
+              "name": "Henry Golding",
+              "picture": "https://resizing.flixster.com/3M3ZcZsON-g_KYoBA5ERussCv5U=/100x120/v2/https://flxt.tmsimg.com/assets/1043999_v9_ba.jpg"
+            },
+            {
+              "name": "Michelle Yeoh",
+              "picture": "https://resizing.flixster.com/mrcdzQeX8JRMDoSrOsCg-n7OIRg=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/73516/73516_v9_ba.jpg"
+            },
+            {
+              "name": "Gemma Chan",
+              "picture": "https://resizing.flixster.com/Se03K0UfR_BMmcObj8rludVyjGo=/100x120/v2/https://flxt.tmsimg.com/assets/565153_v9_bc.jpg"
+            },
+            {
+              "name": "Lisa Lu",
+              "picture": "https://resizing.flixster.com/504HU0cMFap0dt_fmCl-bJe8SVQ=/100x120/v2/https://flxt.tmsimg.com/assets/77293_v9_bb.jpg"
+            },
+            {
+              "name": "Awkwafina",
+              "picture": "https://resizing.flixster.com/t4KIv5rWkD2p7DpeQ77mfhKjEwY=/100x120/v2/https://flxt.tmsimg.com/assets/900111_v9_ba.jpg"
+            },
+            {
+              "name": "Harry Shum Jr.",
+              "picture": "https://resizing.flixster.com/wBtnQ5CQj94u_yxze-SLToMb5YI=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/590768/590768_v9_bb.jpg"
+            },
+            {
+              "name": "Ken Jeong",
+              "picture": "https://resizing.flixster.com/i7Qjlc0c3_9g8YpMcux5c_Y5HbY=/100x120/v2/https://flxt.tmsimg.com/assets/313030_v9_bb.jpg"
+            },
+            {
+              "name": "Sonoya Mizuno",
+              "picture": "https://resizing.flixster.com/8XA1VRm5keP_Yj4RyYEeegCNdjY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/804769/804769_v9_bb.jpg"
+            },
+            {
+              "name": "Chris Pang",
+              "picture": "https://resizing.flixster.com/3JO0yN5R8B5TVf_OQc2mXMbsmLY=/100x120/v2/https://flxt.tmsimg.com/assets/761309_v9_ba.jpg"
+            },
+            {
+              "name": "Jimmy O. Yang",
+              "picture": "https://resizing.flixster.com/n17F7yoMetxIFYMh16WDM0gc1h8=/100x120/v2/https://flxt.tmsimg.com/assets/649195_v9_ba.jpg"
+            },
+            {
+              "name": "Ronny Chieng",
+              "picture": "https://resizing.flixster.com/18T63G0m-FbtOXVd6JA1s_oKvtQ=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/901343/901343_v9_ba.jpg"
+            },
+            {
+              "name": "Remy Hii",
+              "picture": "https://resizing.flixster.com/0iULPxp9GRPiS2V3G6bvIScpJ8w=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/806474/806474_v9_bb.jpg"
+            },
+            {
+              "name": "Nico Santos",
+              "picture": "https://resizing.flixster.com/P8NyY9c80_4OS2ZNLzDdMXJk9TI=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/834814/834814_v9_ba.jpg"
+            },
+            {
+              "name": "Jing Lusi",
+              "picture": "https://resizing.flixster.com/VO-AQ0AWQRx2aSfV3c-EmII8gX0=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/664370/664370_v9_ba.jpg"
+            }
+          ]
+        }
+      },
+      "MovieInfo": {
+        "title": "MovieInfo",
+        "required": [
+          "Rating",
+          "Genre",
+          "Original Language",
+          "Director",
+          "Producer",
+          "Writer",
+          "Release Date (Theaters)",
+          "Release Date (Streaming)",
+          "Box Office (Gross USA)",
+          "Distributor",
+          "Production Co",
+          "Sound Mix"
+        ],
+        "type": "object",
+        "properties": {
+          "Rating": {
+            "type": "string"
+          },
+          "Genre": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "Original Language": {
+            "type": "string"
+          },
+          "Director": {
+            "type": "string"
+          },
+          "Producer": {
+            "type": "string"
+          },
+          "Writer": {
+            "type": "string"
+          },
+          "Release Date (Theaters)": {
+            "type": "string"
+          },
+          "Release Date (Streaming)": {
+            "type": "string"
+          },
+          "Box Office (Gross USA)": {
+            "type": "string"
+          },
+          "Distributor": {
+            "type": "string"
+          },
+          "Production Co": {
+            "type": "string"
+          },
+          "Sound Mix": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "Rating": "PG-13 (Some Suggestive Content|Language",
+          "Genre": [
+            "Romance"
+          ],
+          "Original Language": "English",
+          "Director": "Jon M. Chu",
+          "Producer": "Nina Jacobson, Brad Simpson, John Penotti",
+          "Writer": " Peter Chiarelli, Adele Lim",
+          "Release Date (Theaters)": "Aug 15, 2018  Wide",
+          "Release Date (Streaming)": "Nov 20, 2018",
+          "Box Office (Gross USA)": "$174.5M",
+          "Distributor": "Warner Bros. Pictures",
+          "Production Co": "Color Force, Ivanhoe Pictures",
+          "Sound Mix": "Dolby Digital, DTS, SDDS"
+        }
+      },
+      "Character": {
+        "title": "Character",
+        "required": [
+          "name",
+          "picture"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "picture": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Constance Wu",
+          "picture": "https://resizing.flixster.com/1yh69fe-7HJ634B9QXl5yXYsSKY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/496539/496539_v9_bb.jpg"
+        }
+      },
+      "movies_idrequest": {
+        "title": "movies_idrequest",
+        "required": [
+          "title",
+          "poster",
+          "sypnopsis",
+          "movie_info",
+          "character"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "poster": {
+            "type": "string"
+          },
+          "sypnopsis": {
+            "type": "string"
+          },
+          "movie_info": {
+            "$ref": "#/components/schemas/MovieInfo"
+          },
+          "character": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Character"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "title": "PANTERSSS",
+          "poster": "https://static.metacritic.com/images/products/movies/2/9c73236df99b1fafbe8f86bdeba3c678-250h.jpg",
+          "sypnopsis": "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies and release the full power of Black Panther to defeat his foes and secure the safety of his people.",
+          "movie_info": {
+            "Rating": "PG-13 (Sequences of Action Violence|A Brief Rude Gesture)",
+            "Genre": [
+              "Fantasy",
+              "Action",
+              "Adventure"
+            ],
+            "Original Language": "English",
+            "Director": "Ryan Coogler",
+            "Producer": "Kevin Feige",
+            "Writer": "Ryan Coogler, Joe Robert Cole",
+            "Release Date (Theaters)": "Feb 16, 2018  Wide",
+            "Release Date (Streaming)": "May 2, 2018",
+            "Box Office (Gross USA)": "$700.2M",
+            "Distributor": "Walt Disney",
+            "Production Co": "Walt Disney Pictures",
+            "Sound Mix": "DTS, Dolby Atmos"
+          },
+          "character": [
+            {
+              "name": " Boseman",
+              "picture": "https://resizing.flixster.com/_WeTvmtiyLMO-gmSJzfRzIcohvY=/100x120/v2/https://flxt.tmsimg.com/assets/492157_v9_bb.jpg"
+            },
+            {
+              "name": "Michael B. Jordan",
+              "picture": "https://resizing.flixster.com/0wrW94popqYjBdgxzJMIKpABIoE=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/382200/382200_v9_bb.jpg"
+            },
+            {
+              "name": "Lupita Nyong'o",
+              "picture": "https://resizing.flixster.com/BjffG4V8xwsscJQIJZm9pMVYH3Y=/100x120/v2/https://flxt.tmsimg.com/assets/724494_v9_bb.jpg"
+            },
+            {
+              "name": "Danai Gurira",
+              "picture": "https://resizing.flixster.com/R_bem74LX117ZZeuN9yjkWwCF60=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/511454/511454_v9_bb.jpg"
+            },
+            {
+              "name": "Danai Gurira",
+              "picture": "https://resizing.flixster.com/R_bem74LX117ZZeuN9yjkWwCF60=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/511454/511454_v9_bb.jpg"
+            },
+            {
+              "name": "Martin Freeman",
+              "picture": "https://resizing.flixster.com/yTy0s3_ZfUWIuquqRGLXkbY1hnI=/100x120/v2/https://flxt.tmsimg.com/assets/279370_v9_bc.jpg"
+            },
+            {
+              "name": "Daniel Kaluuya",
+              "picture": "https://resizing.flixster.com/I7StAx-1QeI73qQxZLX68tSiJok=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/580280/580280_v9_bb.jpg"
+            },
+            {
+              "name": "Letitia Wright",
+              "picture": "https://resizing.flixster.com/FaSh6PX6KwqTNLVxZx82kDoESns=/100x120/v2/https://flxt.tmsimg.com/assets/643922_v9_bb.jpg"
+            },
+            {
+              "name": "Winston Duke",
+              "picture": "https://resizing.flixster.com/E04Y6z6vJMey-Xpt6MI2u0KTAg0=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/764498/764498_v9_ba.jpg"
+            },
+            {
+              "name": "Angela Bassett",
+              "picture": "https://resizing.flixster.com/3FPtapNZWK9tA1tlbImXwmU30T0=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/4871/4871_v9_bb.jpg"
+            },
+            {
+              "name": "Forest Whitaker",
+              "picture": "https://resizing.flixster.com/BSHW_U6POs9yLhvZXrrcJLMgMeE=/100x120/v2/https://flxt.tmsimg.com/assets/1917_v9_bc.jpg"
+            },
+            {
+              "name": "Andy Serkis",
+              "picture": "https://resizing.flixster.com/xqu5edvpUHDoR8m2mA1NPCYeg1s=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/85991/85991_v9_bb.jpg"
+            },
+            {
+              "name": "Florence Kasumba",
+              "picture": "https://resizing.flixster.com/d1wfStHuR1HFBktcPh2bpJd9ioY=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/732198/732198_v9_bb.jpg"
+            },
+            {
+              "name": "Sterling K. Brown",
+              "picture": "https://resizing.flixster.com/Tku5RvgkPJurjKGxXc3NbXzdyQ4=/100x120/v2/https://flxt.tmsimg.com/assets/293463_v9_bd.jpg"
+            },
+            {
+              "name": "John Kani",
+              "picture": "https://resizing.flixster.com/mnZ-9h9QOwzrjmc45_bb2N0_IwU=/100x120/v2/https://flxt.tmsimg.com/v9/AllPhotos/33039/33039_v9_ba.jpg"
+            }
+          ]
+        }
+      },
+      "registerrequest": {
+        "title": "registerrequest",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "adjie",
+          "email": "adjie@gmail.com",
+          "password": "123456"
+        }
+      },
+      "loginrequest": {
+        "title": "loginrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "udins@gmail.com",
+          "password": "123456"
+        }
+      },
+      "updatedetailsrequest": {
+        "title": "updatedetailsrequest",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "joshua@gmail.com"
+        }
+      },
+      "CreateUserRequest": {
+        "title": "CreateUserRequest",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Udin",
+          "email": "udin@gmail.com",
+          "password": "123456"
+        }
+      },
+      "UpdateUserRequest": {
+        "title": "UpdateUserRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Saprol"
+        }
+      },
+      "CreateMovieReviewRequest": {
+        "title": "CreateMovieReviewRequest",
+        "required": [
+          "userRating",
+          "userReview",
+          "userProfile"
+        ],
+        "type": "object",
+        "properties": {
+          "userRating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userReview": {
+            "type": "string"
+          },
+          "userProfile": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "userRating": 5,
+          "userReview": "Ini review movie paling terupdate",
+          "userProfile": "photo"
+        }
+      },
+      "review_id_request": {
+        "title": "review_id_request",
+        "required": [
+          "userRating",
+          "userReview"
+        ],
+        "type": "object",
+        "properties": {
+          "userRating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userReview": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "userRating": 2,
+          "userReview": "Bad movies ever"
+        }
+      }
+    },
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Movies",
+      "description": "## Movies folder\n\nMovies CRUD Functionality"
+    },
+    {
+      "name": "Authentication",
+      "description": "## Authentication Service\nRoutes for user authentication including register, login, reset password, etc."
+    },
+    {
+      "name": "Users (admin only)",
+      "description": "## Users\n\nCRUD Fuctionality for users only available to admins"
+    },
+    {
+      "name": "Review"
+    }
+  ]
+}
