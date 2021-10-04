@@ -2,6 +2,7 @@ const router = require('express').Router()
 const reviewController = require('../controllers/reviewController')
 const { protect , authorize} = require('../middleware/auth')
 
+router.get('/',protect, reviewController.findUserReview) 
 router.post("/:movieId", protect, reviewController.createReview);
 router.get("/:movieId", reviewController.readAllReview);
 router.patch('/:_id',protect,reviewController.updateUserReview)

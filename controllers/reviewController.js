@@ -48,7 +48,7 @@ class ReviewController {
                 "userId" : userId, "userRating": req.body.userRating, "userReview": req.body.userReview, "username": username } }
         }, {new:true}).select("userReviews");
         saveReview.totalUserReview = saveReview.userReviews.length
-        calculateRating();
+        calculateRating(movieId);
         return res.status(201).json({
             status: "success",
             message: "Review created sucessfully",
@@ -76,7 +76,8 @@ class ReviewController {
                 message: "Review retrieved successfully",
                 data: pagReview,
                 limit: pagReview.length,
-                total: findReview.userReviews.length
+                total: findReview.userReviews.length, 
+            
             });
         } catch (error) {
             console.log(error)
@@ -84,6 +85,28 @@ class ReviewController {
                 status: "failed",
                 message: "Cannot get review"
             });
+        }
+    }
+    
+    static async findUserReview(req,res){
+        const result = []
+        const token = req.headers.authorization.split(" ")[1]
+        const { id } = verify(token,process.env.JWT_SECRET)
+        
+        try{
+            const userReview = await Movies.find({"userReviews.userId" :id}) // bisa pakai select
+        userReview.forEach(e=>{
+            e.userReviews.forEach(r=>{
+                if(r.userId == id ){
+                    result.push({movieId : e._id,movieTitle : e.title , review : r.userReview , rating : r.userRating})
+                }
+            })
+        })
+         if(result.length != 0 )return res.status(200).json({status : "success", data: result}) 
+         else  throw new Error
+        }
+        catch(e){
+            return res.status(500).json({status : "failed" , message : "User has not review", error : e})
         }
     }
 

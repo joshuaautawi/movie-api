@@ -162,6 +162,8 @@ class MovieController {
         }
     }
     
+
+
     static async findByGenre(req,res){
         if(req.query.limit > 20 ) return res.status(400).json({status : "failed", message : "limit must be under 20"})  
         const options = {
